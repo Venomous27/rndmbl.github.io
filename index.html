@@ -90,14 +90,14 @@
             import random
             from pyscript import document
 
-            TOTAL_IMAGES = 114
+            TOTAL_IMAGES = 117
 
             image_element = document.querySelector("#photo-box")
             button_element = document.querySelector("#spin-btn")
 
             def spin(event):
                 random_num = random.randint(1, TOTAL_IMAGES)
-                image_element.src = f"images/{random_num}.jpg"
+                image_element.src = f"images/{random_num}.webp"
 
             button_element.onclick = spin
             </script>
