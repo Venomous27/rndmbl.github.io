@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="https://fonts.googleapis.com/css2?family=Jersey+20&display=swap" rel="stylesheet">
+        <link rel="stylesheet" href="https://pyscript.net/releases/2026.7.3/core.css" />
+        <script type="module" src="https://pyscript.net/releases/2026.7.3/core.js"></script>
+
+        <title>Random BL</title>
+        <style>
+        :root {
+            --bg-color:#000000;
+            --text-color: #ffffff;
+        }
+
+        body {
+            background-color: var(--bg-color);
+        }
+        .heading {
+            font-family: 'Jersey 20';
+            font-size: 40px;
+            color: var(--text-color);
+            text-align: center;
+        }
+
+        .container {
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        width: 90%;
+        max-width: 500px;
+        margin: 20px auto;
+      }
+
+      #photo-box {
+        width: 100%;
+        height: 800px;          /* Fix the height so it never changes */
+        object-fit: contain;    /* Keeps full photo visible without stretching */
+        background-color: #111; /* Fills empty pillarbox space nicely */
+        border-radius: 12px;
+      }
+
+     @media (max-width: 768px) {
+         .container {
+             flex-direction: column;
+             align-items: center;
+            }
+        #photo-box {
+            height: 500px;
+        }
+     }
+
+     #spin-btn {
+         font-family: 'Jersey 20';
+         cursor: pointer;
+         background-color: #111111;
+         color: #999999;
+         border: 2px solid #909090;
+         border-radius: 0px;
+     }
+
+    #spin-btn:hover {
+        opacity: 0.9;
+    }
+
+    #spin-btn:active {
+        transform: scale(0.97);
+    }
+     </style>
+
+    </head>
+
+        <body>
+            <p class="heading">Random BL Generator</p>
+
+            <div class="container">
+                <img id="photo-box" src="images/1.jpg" alt="Random Pick" />
+                <button id="spin-btn">Show me MORE</button>
+              </div>
+
+            <script type="py">
+            import random
+            from pyscript import document
+
+            TOTAL_IMAGES = 114
+
+            image_element = document.querySelector("#photo-box")
+            button_element = document.querySelector("#spin-btn")
+
+            def spin(event):
+                # Generates a random number between 1 and 114
+                random_num = random.randint(1, TOTAL_IMAGES)
+                image_element.src = f"images/{random_num}.jpg"
+
+            button_element.onclick = spin
+            </script>
+
+        </body>
+</html>
