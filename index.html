@@ -36,9 +36,9 @@
 
       #photo-box {
         width: 100%;
-        height: 800px;          /* Fix the height so it never changes */
-        object-fit: contain;    /* Keeps full photo visible without stretching */
-        background-color: #111; /* Fills empty pillarbox space nicely */
+        height: 800px;
+        object-fit: contain;
+        background-color: #111;
         border-radius: 12px;
       }
 
@@ -51,10 +51,10 @@
             height: 500px;
         }
         #spin-btn {
-            width: 70%;            /* Expands the button across the phone screen */
-            max-width: 300px;      /* Caps it so it doesn't get ridiculously wide */
-            padding: 14px 20px;    /* Taller tap area */
-            font-size: 28px;       /* Larger text */
+            width: 70%;
+            max-width: 300px;
+            padding: 14px 20px;
+            font-size: 28px;
           }
      }
 
@@ -96,7 +96,6 @@
             button_element = document.querySelector("#spin-btn")
 
             def spin(event):
-                # Generates a random number between 1 and 114
                 random_num = random.randint(1, TOTAL_IMAGES)
                 image_element.src = f"images/{random_num}.jpg"
 
