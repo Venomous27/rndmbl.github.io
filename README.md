@@ -1,3 +1,3 @@
 # Random BL Flasher
 
-## [Click](https://github.com/Venomous27/rndmbl.github.io) To Get Flashed
+## [Click](https://venomous27.github.io/rndmbl.github.io/) To Get Flashed
